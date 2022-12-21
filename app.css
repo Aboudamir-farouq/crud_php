@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5vw;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.47);
+}
+
+form{
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 1vw;
+    width: 50vw;
+    margin: auto;
+    padding: 1vw;
+    margin-bottom: 1vw;
+}
+
+#tb_form{
+    width: 50vw;
+    margin: auto;   
+}
+
+#tb_form tr td{
+    padding: 0.5vw;
+}
+
+input[type=text], input[type=email], select{
+    width: 37vw;
+    padding: 0.5vw;
+}
+
+input[type=submit]{
+    padding: 0.5vw;
+}
+
+span{
+    width: 2vw;
+    display: inline-block;
+}
+
+select{
+    margin-bottom: 0.5vw;
+}
+
+#db{
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 1vw;
+    width: 50vw;
+    margin: auto;
+    padding: 1vw;
+}
+
+#tb_db{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tb_db tr td, #tb_db tr th{
+    border: solid 1px black;
+}
+
