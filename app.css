@@ -32,7 +32,7 @@ input[type=text], input[type=email], select{
     padding: 0.5vw;
 }
 
-input[type=submit]{
+input[type=submit], input[type=number]{
     padding: 0.5vw;
 }
 
@@ -43,6 +43,10 @@ span{
 
 select{
     margin-bottom: 0.5vw;
+}
+
+button, input[type=submit]{
+    cursor: pointer;
 }
 
 #db{
@@ -61,5 +65,15 @@ select{
 
 #tb_db tr td, #tb_db tr th{
     border: solid 1px black;
+    text-align: center;
+}
+
+#tb_db tr td button{
+    margin: 0.5vw;
+    padding: 0.2vw;
+}
+
+a{
+    text-decoration: none;
 }
 
