@@ -27,12 +27,12 @@ form{
     padding: 0.5vw;
 }
 
-input[type=text], input[type=email], select{
+input[type=text], input[type=email], input[type=number], select{
     width: 37vw;
     padding: 0.5vw;
 }
 
-input[type=submit], input[type=number]{
+input[type=submit]{
     padding: 0.5vw;
 }
 

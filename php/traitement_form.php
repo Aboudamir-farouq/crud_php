@@ -1,5 +1,7 @@
 <?php
     header("Location:../index.php");
+    $_SESSION["modifier"] = false;
+
     $servername = "localhost";
     $username = "root";
     $password = "";
