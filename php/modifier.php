@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require "connexion.class.php";
 
     $servername = "localhost";
@@ -21,5 +22,7 @@
 
     $conn = new Connexion($servername, $dbname, $username, $password);
     $conn->modifyData($id, $nom, $genre, $ville);
+
+    $_SESSION["modifier"] = false;
 
     header("Location:../index.php");

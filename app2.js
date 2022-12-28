@@ -13,5 +13,11 @@ select.addEventListener("change", function(e){
 form.addEventListener("submit", function(e){
     e.preventDefault();
     id.disabled = false;
-    form.submit()
+    if(select.options[select.selectedIndex].innerText == "Choisir une ville"){
+        alert("merci de choisir une ville")
+    }else{
+        form.submit()
+    }
 }, true)
+
+

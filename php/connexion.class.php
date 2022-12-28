@@ -33,7 +33,7 @@
                 if($nbre){
                     return intVal($nbre[0]) + 1;
                 }else{
-                    return "new";
+                    return "---";
                 }
             }catch(PDOException $e){
                 $this->con = null;
@@ -64,6 +64,34 @@
                 $sth->bindParam(2, $genre);
                 $sth->bindParam(3, $ville);
                 $sth->bindParam(4, $id);
+                $sth->execute();
+            }catch(PDOException $e){
+                $this->con = null;
+                echo $e->getMessage();
+            }
+        }
+
+        public function delete($id){
+            try{
+                $this->connect();
+                $sql = "DELETE FROM personne WHERE id=?";
+                $sth = $this->con->prepare($sql);
+                $sth->bindParam(1, $id);
+                $sth->execute();
+            }catch(PDOException $e){
+                $this->con = null;
+                echo $e->getMessage();
+            }
+        }
+
+        public function addData($nom, $genre, $ville){
+            try{
+                $this->connect();
+                $sql = "INSERT INTO personne (nom, genre, ville) VALUES (?, ?, ?)";
+                $sth = $this->con->prepare($sql);
+                $sth->bindParam(1, $nom);
+                $sth->bindParam(2, $genre);
+                $sth->bindParam(3, $ville);
                 $sth->execute();
             }catch(PDOException $e){
                 $this->con = null;

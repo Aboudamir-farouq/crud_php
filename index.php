@@ -7,8 +7,7 @@
     $dbname = "crud_database";
     if(isset($_SESSION['modifier'])){
         if($_SESSION['modifier']){
-            $action = "php/modifier?id=" . $_GET['id'] . "&nom=" . $_GET['nom'] . "&genre=" . $_GET['genre'] . "&ville=" . $_GET['ville'];  
-            $_SESSION["modifier"] = true;
+            $action = "php/modifier?id=" . $_GET['id'] . "&nom=" . $_GET['nom'] . "&genre=" . $_GET['genre'] . "&ville=" . $_GET['ville'];
         }else{
             $action = "php/traitement_form.php";
         }
@@ -32,7 +31,7 @@
         <table id="tb_form">
             <tr>
                 <td><label for="id">Id : </label></td>
-                <td><input id="id" type="number" value=<?php echo isset($_GET['id']) ? $_GET['id'] : strVal($conn->getMaxId());?> name="id" readonly/></td>
+                <td><input id="id" type="text" value=<?php echo isset($_GET['id']) ? $_GET['id'] : strVal($conn->getMaxId());?> name="id" readonly/></td>
             </tr>
             <tr>
                 <td><label for="nom">Nom : </label></td>
@@ -111,6 +110,6 @@
         echo "<script>let txt_ville = document.getElementById('txt_ville'), select = document.getElementById('select'); txt_ville.value='". $_GET["ville"] . "'; txt_ville.disabled=false; select.disabled=true</script>";
     }
     ?>
-    <script src="app1.js"></script>
+    <script src="app2.js"></script>
 </body>
 </html>

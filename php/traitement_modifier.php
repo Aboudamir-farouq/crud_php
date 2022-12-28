@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION["modifier"] = true;
 
     //une fonction qui permet de sécuriser les données reçus via le formulaire
     function valider_donnee($donnee){

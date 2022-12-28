@@ -1,5 +1,6 @@
 <?php
     header("Location:../index.php");
+    require "connexion.class.php";
     $_SESSION["modifier"] = false;
 
     $servername = "localhost";
@@ -27,20 +28,5 @@
         $ville = valider_donnee($_POST["ville"]);
     }
     
-
-    try{
-        $con = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "call ajouter(?, ?, ?)";
-
-        $sth = $con->prepare($sql);
-        $sth->bindParam(1, $nom);
-        $sth->bindParam(2, $genre);
-        $sth->bindParam(3, $ville);
-
-        $sth->execute();
-        
-    }catch(PDOException $e){
-        $con = null;
-    }
+    $conn = new Connexion($servername, $dbname, $username, $password);
+    $conn->addData($nom, $genre, $ville);
